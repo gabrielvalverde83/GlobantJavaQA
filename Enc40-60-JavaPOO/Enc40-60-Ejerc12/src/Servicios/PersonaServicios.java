@@ -76,7 +76,7 @@ public class PersonaServicios {
 
     public void mostrarPersona(Persona p){
             
-        System.out.println(p.getNombre() + " nacio el " + p.getFechaNacimiento() + " entonces tiene " + p.getEdad());
+        System.out.println(p.getNombre() + " nacio el " + p.getFechaNacimiento() + " entonces tiene " + p.getEdad() + " años");
         //System.out.println(p.getNombre() + " nacio el " + p.getFechaNacimiento().getYear() + "/" + p.getFechaNacimiento().getMonth() + "/" + p.getFechaNacimiento().getDate() + " entonces tiene " + p.getEdad());    //me resta 1 mes
     }
 }

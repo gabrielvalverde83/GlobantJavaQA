@@ -38,15 +38,15 @@ public class Main {
         CadenaServicio cs = new CadenaServicio();
         Cadena c = cs.crearCadena();
         
-//        cs.mostrarVocales(c);
-//        cs.invertirFrase(c);
-//        cs.vecesRepetido(c);
-//        cs.compararLongitud(c);
+        cs.mostrarVocales(c);
+        cs.invertirFrase(c);
+        cs.vecesRepetido(c);
+        cs.compararLongitud(c);
 
-//        cs.unirFrases(c);
-//        cs.remplazar(c);
+        cs.unirFrases(c);
+        cs.remplazar(c);
 
-       cs.contiene(c); 
+        cs.contiene(c); 
        
     }
     

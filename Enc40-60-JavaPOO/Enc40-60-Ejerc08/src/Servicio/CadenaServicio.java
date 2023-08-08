@@ -55,6 +55,8 @@ public class CadenaServicio {
     
     public void invertirFrase(Cadena c){
         
+        System.out.println("");
+        System.out.println("*****************************************************************");
         String letra;
         String fraseInvertida = "";
     
@@ -62,7 +64,7 @@ public class CadenaServicio {
             letra = c.getFrase().substring(c.getLongFrase()-i-1, c.getLongFrase()-i);
             fraseInvertida = fraseInvertida.concat(letra);
         }
-        System.out.println("*****************************************************************");
+        
         System.out.println("");
         System.out.println("Frase invertida:");
         System.out.println(fraseInvertida);
@@ -75,8 +77,8 @@ public class CadenaServicio {
         
         int cont = 0;
         
-        System.out.println("*****************************************************************");
         System.out.println("");
+        System.out.println("*****************************************************************");
         System.out.println("Ingrese la letra a buscar en la frase");
         String letra = leer.next().toUpperCase();
         String letra2;
@@ -87,7 +89,8 @@ public class CadenaServicio {
                 cont++;
             }
         }
-
+        
+        System.out.println("");
         System.out.println("La letra " + letra + " se encontró " + cont + " veces");
     }
     
@@ -95,6 +98,8 @@ public class CadenaServicio {
     
     public void compararLongitud(Cadena c){
         
+        System.out.println("");
+        System.out.println("*****************************************************************");
         System.out.println("Ingrese una nueva frase");
         String fraseNueva = leer.next();
         
@@ -107,38 +112,49 @@ public class CadenaServicio {
     
     public void unirFrases(Cadena c){
         
+        System.out.println("");
+        System.out.println("*****************************************************************");
         System.out.println("Ingrese una nueva frase");
         String fraseNueva = leer.next();
         
         fraseNueva = c.getFrase().concat(fraseNueva);
         
+        System.out.println("");
         System.out.println("Las 2 frases unidas queda: " + fraseNueva);
     }
     
      /**********************************************************************************************************/
     
     public void remplazar(Cadena c){
-    
+        
+        System.out.println("");
+        System.out.println("*****************************************************************");
         System.out.println("Ingrese la letra a reemplazar");
         String letra = leer.next();
         
+        System.out.println("");
         System.out.println("Ingrese la letra o símbolo por el cual lo quiere reemplazar");
         String letra2 = leer.next();
         
         String reemplazo = c.getFrase().replaceAll(letra, letra2);
         
+        System.out.println("");
         System.out.println("La nueva frase queda: " + reemplazo);
     }
     
      /**********************************************************************************************************/
     
     public void contiene(Cadena c){
-    
+        
+        System.out.println("");
+        System.out.println("*****************************************************************");
         System.out.println("Ingrese la letra a buscar en la frase");
         String letra = leer.next().toUpperCase();
         
         boolean resultado = c.getFrase().toUpperCase().contains(letra);
         
+        System.out.println("");
+        System.out.println("*****************************************************************");
         System.out.println("La frase contiene a la letra: " + letra + " ??? " + resultado);
     
     }

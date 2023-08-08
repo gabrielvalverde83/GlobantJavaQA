@@ -72,5 +72,32 @@ public class validaciones {
             System.out.println("En la posición de la columna elegida, la palabra no cabe o está fuera de rango de la matriz - Elija una posición menor");
         }
     }while(cabe == false || columna<0);
-}
+    
+    /********************************************************************************************************/
+    //seguir ingresando info o confirmar algo?
+    
+    String respuesta;
+    
+    do {
+        //hacer algo propio del ejercicio
+        System.out.println("Desea ingresar otro? S o N");
+        do {
+            respuesta = leer.next().toUpperCase();
+            if (!respuesta.equals("S") && !respuesta.equals("N")) {
+                System.out.println("Error - Ingrese S o N");
+            }
+        } while (!respuesta.equals("S") && !respuesta.equals("N"));
+    } while (respuesta.equals("S"));
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
 }   

@@ -37,10 +37,10 @@ Ejemplo fecha actual: Date fechaActual = new Date();
         
         
         int diferencia = fechaActual.getYear() - fecha2.getYear();  //diferencia en años, no respeta meses ni dias, lo hace en bruto
-        System.out.println("Diferencia" + diferencia);
+        System.out.println("Diferencia " + diferencia + " años");
         
-        diferencia = fechaActual.getMonth() - fecha2.getMonth();    //diferencia de mes a mes
-        System.out.println("Diferencia" + diferencia);
+        int diferencia2 = fechaActual.getMonth() - fecha2.getMonth();    //diferencia de mes a mes
+        System.out.println("Diferencia " + diferencia2 + " meses");
         
         
         

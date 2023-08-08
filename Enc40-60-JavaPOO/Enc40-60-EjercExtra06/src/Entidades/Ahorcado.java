@@ -5,11 +5,9 @@ import java.util.Arrays;
 public class Ahorcado {
     
     private String palabra;
-    private int longPalabra;
-    private int intentosMax;
+    private int intentosMax;    //se usa en un primer momento como intentos max y luego como contador decreciente de intentos que quedan
     private String pista;
-    private String[] palabraVector;
-    private String[] palabraAdivinada = new String[10];
+    private String[] palabraAdivinada;
 
     public Ahorcado() {
     }
@@ -27,14 +25,6 @@ public class Ahorcado {
         this.palabra = palabra;
     }
 
-    public int getLongPalabra() {
-        return longPalabra;
-    }
-
-    public void setLongPalabra(int longPalabra) {
-        this.longPalabra = longPalabra;
-    }
-
     public int getIntentosMax() {
         return intentosMax;
     }
@@ -50,33 +40,29 @@ public class Ahorcado {
     public void setPista(String pista) {
         this.pista = pista;
     }
-
-    public String[] getPalabraVector() {
-        return palabraVector;
-    }
-
-    //plantie el setPalabraVector de esta forma asi no tengo que usar un vector auxiliar en AhorcadoServicios
     
-    public void setPalabraVector(int longitudPalabra) {
-        this.palabraVector = new String [longitudPalabra];
-    }
-    
-    public void setPalabraVector2(String palabraVector, int i) {
-        this.palabraVector[i] = palabraVector;
-    }
-
     public String[] getPalabraAdivinada() {
         return palabraAdivinada;
+    }
+    
+    public String getPalabraAdivinada2(int i) {
+        return palabraAdivinada[i];
     }
 
     public void setPalabraAdivinada(int longitudPalabra) {
         this.palabraAdivinada = new String [longitudPalabra];
     }
+    
+    public void setPalabraAdivinada2(String letra, int i) {
+        this.palabraAdivinada[i] = letra;
+    }
 
     @Override
     public String toString() {
-        return "Ahorcado{" + "palabra=" + palabra + ", longPalabra=" + longPalabra + ", intentosMax=" + intentosMax + ", pista=" + pista + ", palabraVector=" + Arrays.toString(palabraVector) + ", palabraAdivinada=" + Arrays.toString(palabraAdivinada) + '}';
+        return "Ahorcado{" + "palabra=" + palabra + ", intentosMax=" + intentosMax + ", pista=" + pista + ", palabraAdivinada=" + Arrays.toString(palabraAdivinada) + '}';
     }
+
+    
     
     
 

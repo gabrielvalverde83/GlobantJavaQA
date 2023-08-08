@@ -9,21 +9,20 @@ public class Curso {
     private int cantDiasPorSemana;
     private String turno;
     private int precioPorHora;
-    private int dimension;
+//    private int dimension;
     private String [] nombresAlumnos;   //la dimension la toma solo cuando le copio el vector aux en CursoServicios
 
     public Curso() {
     }
 
-    public Curso(String nombreCurso, int cantHorasPorDia, int cantHorasPorSemana, String turno, int precioPorHora, int dimension) {
+    public Curso(String nombreCurso, int cantHorasPorDia, int cantDiasPorSemana, String turno, int precioPorHora, String[] nombresAlumnos) {
         this.nombreCurso = nombreCurso;
         this.cantHorasPorDia = cantHorasPorDia;
-        this.cantDiasPorSemana = cantHorasPorSemana;
+        this.cantDiasPorSemana = cantDiasPorSemana;
         this.turno = turno;
         this.precioPorHora = precioPorHora;
-        this.dimension = dimension;
+        this.nombresAlumnos = nombresAlumnos;
     }
-    
 
     public String getNombreCurso() {
         return nombreCurso;
@@ -45,8 +44,8 @@ public class Curso {
         return cantDiasPorSemana;
     }
 
-    public void setCantDiasPorSemana(int cantHorasPorSemana) {
-        this.cantDiasPorSemana = cantHorasPorSemana;
+    public void setCantDiasPorSemana(int cantDiasPorSemana) {
+        this.cantDiasPorSemana = cantDiasPorSemana;
     }
 
     public String getTurno() {
@@ -73,18 +72,12 @@ public class Curso {
         this.nombresAlumnos = nombresAlumnos;
     }
 
-    public int getDimension() {
-        return dimension;
-    }
-
-    public void setDimension(int dimension) {
-        this.dimension = dimension;
-    }
-
     @Override
     public String toString() {
-        return "Curso{" + "nombreCurso=" + nombreCurso + ", cantHorasPorDia=" + cantHorasPorDia + ", cantDiasPorSemana=" + cantDiasPorSemana + ", turno=" + turno + ", precioPorHora=" + precioPorHora + ", dimension=" + dimension + ", nombresAlumnos=" + Arrays.toString(nombresAlumnos) + '}';
+        return "Curso{" + "nombreCurso=" + nombreCurso + ", cantHorasPorDia=" + cantHorasPorDia + ", cantDiasPorSemana=" + cantDiasPorSemana + ", turno=" + turno + ", precioPorHora=" + precioPorHora + ", nombresAlumnos=" + Arrays.toString(nombresAlumnos) + '}';
     }
+
+    
 
     
     
