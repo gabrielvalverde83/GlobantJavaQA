@@ -76,8 +76,7 @@ public class ClienteServicio {
                     + "\n 9.Salir sin modificar");
             
             int datoAMod;
-            
-            
+              
             boolean salir;
             do{
                 do{
