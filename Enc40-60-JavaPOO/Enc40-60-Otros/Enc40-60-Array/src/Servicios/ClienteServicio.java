@@ -22,7 +22,9 @@ public class ClienteServicio {
         clientes.add(new Cliente("Juanelo", 40, 2.00, 55, "Marcar"));
         clientes.add(new Cliente("Juanelo", 25, 1.75, 80, "Marcar"));
         clientes.add(new Cliente("Juanelo", 45, 1.45, 60, "Marcar"));
-
+        
+        //otra forma de agregar
+        
         Cliente cli2 = new Cliente();
         cli2.setNombre("Hermenegilda");
         cli2.setEdad(40);
