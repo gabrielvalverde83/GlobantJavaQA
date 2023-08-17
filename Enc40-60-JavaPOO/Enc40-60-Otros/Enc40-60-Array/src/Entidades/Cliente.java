@@ -3,7 +3,7 @@ package Entidades;
 
 /* @author jmlucero */
 public class Cliente {
-    private static int internalId=0;
+    private static int internalId = 0;
     private int id;
     private String nombre;
     private int edad;
@@ -13,12 +13,14 @@ public class Cliente {
     
     
     public Cliente() {
-        internalId++;
-        id = internalId;
+        //internalId++;               //PROBLEMA ID: el problema de hacerlo asi es que cada vez que se crea un cliente, se incrementa el id
+        //id = internalId;            //si hacemos consultas o pasos previos creando un auxiliar,etc, al momento de crear un cliente real van a haber Ids salteados
     }
 
     public Cliente(String nombre, int edad, double altura, double peso, String objetivo) {
-        this();
+        //this();                     //PROBLEMA ID
+        internalId++;                   //inicia del id = 1
+        id = internalId;                //lo hago asi para evitar el PROBLEMA ID, y cuando ingreso por teclado lo incremento desde el set
         this.nombre = nombre;
         this.edad = edad;
         this.altura = altura;
@@ -37,6 +39,11 @@ public class Cliente {
      */
     public int getId() {
         return id;
+    }
+    
+    public void setId() {       //PROBLEMA ID
+        internalId++;   
+        id = internalId; 
     }
 
     /**

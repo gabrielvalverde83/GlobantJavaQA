@@ -1,0 +1,9 @@
+40-60-Otros
+61-62-todos
+63-73-extras
+
+ejercicios con varias cosas aplicadas
+
+* Enc 40-60-JavaPOOO ---- Otros --- Arrays
+* Enc63-73-Collecciones ---- Otros --- Los 2 ejercicios
+

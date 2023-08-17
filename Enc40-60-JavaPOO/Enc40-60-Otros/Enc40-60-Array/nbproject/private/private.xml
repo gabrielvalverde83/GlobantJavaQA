@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
         <file>
             <url>src/Servicios/MenuServicio.java</url>
             <bookmark id="1">
@@ -9,8 +9,21 @@
                 <key/>
             </bookmark>
         </file>
+        <file>
+            <url>src/Servicios/ClienteServicio.java</url>
+            <bookmark id="3">
+                <name/>
+                <line>66</line>
+                <key/>
+            </bookmark>
+        </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/gabri/OneDrive/Documentos/Gabriel/1-Cursos/1-EggGlobantQA/1-ProjectsEGG/ProjectsJava/Enc40-60-JavaPOO/Enc40-60-Otros/Enc40-60-Array/src/Servicios/ClienteServicio.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Documentos/Gabriel/1-Cursos/1-EggGlobantQA/1-ProjectsEGG/ProjectsJava/Enc40-60-JavaPOO/Enc40-60-Otros/Enc40-60-Array/src/com/jml/desafiogrupal/Main.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Documentos/Gabriel/1-Cursos/1-EggGlobantQA/1-ProjectsEGG/ProjectsJava/Enc40-60-JavaPOO/Enc40-60-Otros/Enc40-60-Array/src/Servicios/MenuServicio.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Documentos/Gabriel/1-Cursos/1-EggGlobantQA/1-ProjectsEGG/ProjectsJava/Enc40-60-JavaPOO/Enc40-60-Otros/Enc40-60-Array/src/Entidades/Cliente.java</file>
+        </group>
     </open-files>
 </project-private>

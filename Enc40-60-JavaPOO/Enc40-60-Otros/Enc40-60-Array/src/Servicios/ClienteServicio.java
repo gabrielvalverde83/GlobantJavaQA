@@ -2,12 +2,9 @@ package Servicios;
 
 import Entidades.Cliente;
 import java.util.ArrayList;
-//import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
-//import java.util.stream.Collectors;
 
-/* @author jmlucero */
 public class ClienteServicio {
 
     ArrayList<Cliente> clientes = new ArrayList<>();
@@ -16,48 +13,64 @@ public class ClienteServicio {
     public void inicializarClientes() {
         //3 maneras distintas de crear objetos y agregarlos al arraylist
         
-        Cliente cli1 = new Cliente("Pepita", 45, 1.8, 78, "Bajar Peso");
+        Cliente cli1 = new Cliente("Pepita", 45, 180, 78, "Bajar Peso");
         clientes.add(cli1);
 
-        clientes.add(new Cliente("Juanelo", 40, 2.00, 55, "Marcar"));
-        clientes.add(new Cliente("Juanelo", 25, 1.75, 80, "Marcar"));
-        clientes.add(new Cliente("Juanelo", 45, 1.45, 60, "Marcar"));
+        clientes.add(new Cliente("Juanelo", 40, 200, 55, "Marcar"));
+        clientes.add(new Cliente("Juanelo", 25, 175, 80, "Marcar"));
+        clientes.add(new Cliente("Juanelo", 45, 145, 60, "Marcar"));
         
         //otra forma de agregar
         
         Cliente cli2 = new Cliente();
         cli2.setNombre("Hermenegilda");
         cli2.setEdad(40);
-        cli2.setAltura(1.68);
+        cli2.setAltura(168);
         cli2.setObjetivo("Levantar Gluteos");
+        cli2.setId();
         clientes.add(cli2);
     }
     
     /*************************************************************************************************/
     /*************************************************************************************************/
     /*************************************************************************************************/
-
+    
+    //validacion general con try & catc, fc registrar cliente, creando un objeto cliente
+        
     public void registrarCliente() {
-        Cliente cl1 = new Cliente();
+        Cliente clienteAux = new Cliente();
+        boolean validacion;
+        
 
         System.out.println("");
+         
+        do{
+            try {
+                validacion = false; 
+                System.out.println("Introduzca el nombre del cliente");
+                clienteAux.setNombre(leer.next());
+                System.out.println("Ingrese la edad");
+                clienteAux.setEdad(leer.nextInt());
+                System.out.println("Ingrese su altura en m");
+                clienteAux.setAltura(leer.nextDouble());
+                //clienteAux.setAltura(Double.parseDouble(leer.next()));
+                System.out.println("Ingrese su peso en kg");
+                clienteAux.setPeso(leer.nextDouble());
+                //clienteAux.setPeso(Double.parseDouble(leer.next()));
+                System.out.println("Ingrese el objetivo");
+                clienteAux.setObjetivo(leer.next());
+                //catch (NumberFormatException e)
+            } catch (Exception e) {
+                System.out.println("");
+                System.out.println("******************************************************************************");
+                System.out.println("Error en el ingreso de los datos");
+                System.out.println("Reingrese los valores solicitados");
+                validacion = true;
+            }
+        }while(validacion);
         
-        try {
-            System.out.println("Introduzca el nombre del cliente");
-            cl1.setNombre(leer.next());
-            System.out.println("Ingrese la edad");
-            cl1.setEdad(leer.nextInt());
-            System.out.println("Ingrese su altura en cm");
-            cl1.setAltura(Double.parseDouble(leer.next()));
-            System.out.println("Ingrese su peso");
-            cl1.setPeso(leer.nextDouble());
-            System.out.println("Ingrese el objetivo");
-            cl1.setObjetivo(leer.next());
-            clientes.add(cl1);
-        } catch (NumberFormatException e) {
-            System.out.println("Error en el ingreso de los datos");
-            System.out.println("Reintente");
-        }
+        clienteAux.setId();
+        clientes.add(clienteAux);
     }
     
     /*************************************************************************************************/
@@ -118,9 +131,6 @@ public class ClienteServicio {
             
              System.out.println("Los datos actualizados son");
              System.out.println(opcion);
-             
-
-        
     }
 
     /*************************************************************************************************/
@@ -131,7 +141,6 @@ public class ClienteServicio {
         Cliente opcion=encontrarClientes();
         clientes.remove(opcion);
         obtenerClientes();
-        
     }
     
     /*************************************************************************************************/
@@ -181,7 +190,6 @@ public class ClienteServicio {
         }
         
         return clienteOpcion;
-        
     }
 
     /*************************************************************************************************/

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Enc63-73-DesafioColecciones">
+  <ClassDiagramComponents>
+    <Class name="Main" package="enc63.pkg73.desafiocolecciones" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Habitacion" package="Entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="numHab" type="int" visibility="private"/>
+        <Field name="cantPers" type="int" visibility="private"/>
+        <Field name="fechaIn" type="Date" visibility="private"/>
+        <Field name="fechaOut" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="numHab"/>
+          <Argument type="int" name="cantPers"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="numHab"/>
+          <Argument type="int" name="cantPers"/>
+          <Argument type="Date" name="fechaIn"/>
+          <Argument type="Date" name="fechaOut"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumHab" returnType="int" visibility="public"/>
+        <Method name="setNumHab" returnType="void" visibility="public">
+          <Argument type="int" name="numHab"/>
+        </Method>
+        <Method name="getCantPers" returnType="int" visibility="public"/>
+        <Method name="setCantPers" returnType="void" visibility="public">
+          <Argument type="int" name="cantPers"/>
+        </Method>
+        <Method name="getFechaIn" returnType="Date" visibility="public"/>
+        <Method name="setFechaIn" returnType="void" visibility="public">
+          <Argument type="Date" name="fechaIn"/>
+        </Method>
+        <Method name="getFechaOut" returnType="Date" visibility="public"/>
+        <Method name="setFechaOut" returnType="void" visibility="public">
+          <Argument type="Date" name="fechaOut"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="Entidades" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="dni" type="int" visibility="private"/>
+        <Field name="pais" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="int" name="dni"/>
+          <Argument type="String" name="pais"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="getDni" returnType="int" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="int" name="dni"/>
+        </Method>
+        <Method name="getPais" returnType="String" visibility="public"/>
+        <Method name="setPais" returnType="void" visibility="public">
+          <Argument type="String" name="pais"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Reserva" package="Entidades" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="internalId" type="int" visibility="private" isStatic="true"/>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="numHab" type="int" visibility="private"/>
+        <Field name="cantPers" type="int" visibility="private"/>
+        <Field name="fechaIn" type="Date" visibility="private"/>
+        <Field name="fechaOut" type="Date" visibility="private"/>
+        <Field name="datosPersona" type="Persona" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="numHab"/>
+          <Argument type="int" name="cantPers"/>
+          <Argument type="Date" name="fechaIn"/>
+          <Argument type="Date" name="fechaOut"/>
+          <Argument type="Persona" name="datosPersona"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getInternalId" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="setInternalId" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="internalId"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public"/>
+        <Method name="getNumHab" returnType="int" visibility="public"/>
+        <Method name="setNumHab" returnType="void" visibility="public">
+          <Argument type="int" name="numHab"/>
+        </Method>
+        <Method name="getCantPers" returnType="int" visibility="public"/>
+        <Method name="setCantPers" returnType="void" visibility="public">
+          <Argument type="int" name="cantPers"/>
+        </Method>
+        <Method name="getFechaIn" returnType="Date" visibility="public"/>
+        <Method name="setFechaIn" returnType="void" visibility="public">
+          <Argument type="Date" name="fechaIn"/>
+        </Method>
+        <Method name="getFechaOut" returnType="Date" visibility="public"/>
+        <Method name="setFechaOut" returnType="void" visibility="public">
+          <Argument type="Date" name="fechaOut"/>
+        </Method>
+        <Method name="getDatosPersona" returnType="Persona" visibility="public"/>
+        <Method name="setDatosPersona" returnType="void" visibility="public">
+          <Argument type="Persona" name="datosPersona"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HabitacionServicios" package="Servicios" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="listadoHab" type="Habitacion" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="inicializarListadoHab" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HotelServicios" package="Servicios" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="listaReservas" type="ArrayList&lt;Reserva&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="inicializar" returnType="void" visibility="public"/>
+        <Method name="mostrarListadoReservas" returnType="void" visibility="public"/>
+        <Method name="cargarReserva" returnType="void" visibility="public"/>
+        <Method name="crearPersona" returnType="Persona" visibility="public"/>
+        <Method name="buscarReservaPorId" returnType="Reserva" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="eliminarReserva" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Servicios.HotelServicios" target="Entidades.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Servicios.HotelServicios" target="Entidades.Reserva" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listadoHab" source="Servicios.HabitacionServicios" target="Entidades.Habitacion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Entidades.Reserva" target="Entidades.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="datosPersona" source="Entidades.Reserva" target="Entidades.Persona" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaReservas" source="Servicios.HotelServicios" target="Entidades.Reserva" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Reserva&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

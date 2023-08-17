@@ -64,6 +64,11 @@ public class random {
     /********************************************************************************************************/
     
     // rellenar aleatorio entre 5 y 15
+    /*
+        Obtener un numero entre 5 y 15
+        int numero = (int)(Math.random()*(X-Y+1)+Y;
+        Si le sacamos el +1 no incluye al 15
+        */
     
     
     public static void rellenar3(int vector[]){
@@ -71,12 +76,5 @@ public class random {
         for (int i=0; i<vector.length; i++){
             vector[i] = (int)(Math.random()*(15-5+1)+5);
         }
-        
-        /*
-        Obtener un numero entre 5 y 15
-        int numero = (int)(Math.random()*(X-Y+1)+Y;
-        Si le sacamos el +1 no incluye al 15
-        */
-        
     }
 }

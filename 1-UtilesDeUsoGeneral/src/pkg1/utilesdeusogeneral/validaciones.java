@@ -20,15 +20,14 @@ public class validaciones {
     /********************************************************************************************************/
     /********************************************************************************************************/
     
-    //ingreso de numeros
-    
+    //ingreso de numeros con try & catch
+     
     int ingresosMax=0;
     int max = 10;
     boolean validacion;
 
         do {
             System.out.println("Ingrese un numero cuyo valor debe ser mayor a 1 y menor a " + max );
-            
             validacion = true;    
             try {
                     ingresosMax = Integer.parseInt(leer.next());
@@ -40,6 +39,15 @@ public class validaciones {
         } while (validacion == false || ingresosMax < 1 || ingresosMax > max);
 
     System.out.println("Paso Validacion" + ingresosMax);
+    
+    
+    
+       
+    
+    
+    
+    
+    
     
     /********************************************************************************************************/
     /********************************************************************************************************/
@@ -138,6 +146,8 @@ public class validaciones {
             System.out.println("En la posición de la columna elegida, la palabra no cabe o está fuera de rango de la matriz - Elija una posición menor");
         }
     }while(cabe == false || columna<0);
+    
+    
     
     
     

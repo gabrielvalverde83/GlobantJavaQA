@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main">
+  <ClassDiagramComponents>
+    <Class name="Main" package="enc63.pkg73ejercextracolecciones" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Producto" package="Entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="internalId" type="int" visibility="private" isStatic="true"/>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="categoria" type="String" visibility="private"/>
+        <Field name="precio" type="int" visibility="private"/>
+        <Field name="cantidadDisponible" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="categoria"/>
+          <Argument type="int" name="precio"/>
+          <Argument type="int" name="cantidadDisponible"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getCategoria" returnType="String" visibility="public"/>
+        <Method name="setCategoria" returnType="void" visibility="public">
+          <Argument type="String" name="categoria"/>
+        </Method>
+        <Method name="getPrecio" returnType="int" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="int" name="precio"/>
+        </Method>
+        <Method name="getCantidadDisponible" returnType="int" visibility="public"/>
+        <Method name="setCantidadDisponible" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadDisponible"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ProductoServicios" package="Servicios" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="crearProducto" returnType="Producto" visibility="public"/>
+        <Method name="opcionCategoria" returnType="String" visibility="public">
+          <Argument type="Producto" name="nuevoProducto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TiendaServicios" package="Servicios" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="listadoProductos" type="ArrayList&lt;Producto&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="inicializar" returnType="ArrayList" visibility="public"/>
+        <Method name="menu" returnType="void" visibility="public"/>
+        <Method name="buscarProducto" returnType="Producto" visibility="public"/>
+        <Method name="reponerProducto" returnType="void" visibility="public"/>
+        <Method name="comprarProducto" returnType="void" visibility="public"/>
+        <Method name="mostrarProductos" returnType="void" visibility="public">
+          <Argument type="ArrayList" name="listadoProductos"/>
+        </Method>
+        <Method name="agregarProducto" returnType="void" visibility="public"/>
+        <Method name="eliminarProducto" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Servicios.TiendaServicios" target="Entidades.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listadoProductos" source="Servicios.TiendaServicios" target="Entidades.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Producto&gt;"/>
+    <UseRelation source="Servicios.ProductoServicios" target="Entidades.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

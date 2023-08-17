@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicio3">
+  <ClassDiagramComponents>
+    <Class name="Carta" package="" visibility="public" xPosition="328.0" yPosition="44.0">
+      <Fields>
+        <Field name="numero" type="int" visibility="private"/>
+        <Field name="palos" type="Enumerable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Mazo" package="" visibility="public" xPosition="548.0" yPosition="44.0">
+      <Fields>
+        <Field name="cartas" type="ArrayList&lt;Carta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="barajar" returnType="void" visibility="public"/>
+        <Method name="siguienteCarta" returnType="void" visibility="public"/>
+        <Method name="cartasDisponibles" returnType="void" visibility="public"/>
+        <Method name="darCartas" returnType="void" visibility="public"/>
+        <Method name="cartasMonton" returnType="void" visibility="public"/>
+        <Method name="mostrarBaraja" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="Palo" package="" visibility="public" xPosition="54.0" yPosition="44.0">
+      <Literals>
+        <Literal name="COPA"/>
+        <Literal name="ORO"/>
+        <Literal name="BASTO"/>
+        <Literal name="ESPADA"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="palo" source="Carta" target="Palo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cartas" source="Mazo" target="Carta" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
