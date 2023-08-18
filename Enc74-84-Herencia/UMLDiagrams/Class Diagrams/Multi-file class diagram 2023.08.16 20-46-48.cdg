@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Main" package="enc74.pkg84.ejerc02" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RevolverAguaServicios" package="Servicios" visibility="public" xPosition="41.0" yPosition="181.0">
+      <Fields>
+        <Field name="revolverObjeto" type="RevolverAgua" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="llenarRevolver" returnType="void" visibility="public"/>
+        <Method name="rellenar" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="mojar" returnType="boolean" visibility="public"/>
+        <Method name="siguienteChorro" returnType="int" visibility="public"/>
+        <Method name="imprimir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="JugadorServicios" package="Servicios" visibility="public" xPosition="306.0" yPosition="20.0">
+      <Fields>
+        <Field name="revolverServ" type="RevolverAguaServicios" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="disparo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RevolverAgua" package="Entidades" visibility="public" xPosition="306.0" yPosition="298.0">
+      <Fields>
+        <Field name="posicAct" type="int" visibility="private"/>
+        <Field name="posicAgua" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getPosicAct" returnType="int" visibility="public"/>
+        <Method name="setPosicAct" returnType="void" visibility="public">
+          <Argument type="int" name="posicAct"/>
+        </Method>
+        <Method name="getPosicAgua" returnType="int" visibility="public"/>
+        <Method name="setPosicAgua" returnType="void" visibility="public">
+          <Argument type="int" name="posicAgua"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Jugador" package="Entidades" visibility="public" xPosition="608.0" yPosition="20.0">
+      <Fields>
+        <Field name="internalId" type="int" visibility="private" isStatic="true"/>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="mojado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="revolverObjeto" source="Servicios.RevolverAguaServicios" target="Entidades.RevolverAgua" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="revolverServ" source="Servicios.JugadorServicios" target="Servicios.RevolverAguaServicios" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

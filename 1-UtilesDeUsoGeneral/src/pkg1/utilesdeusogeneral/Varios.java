@@ -1,5 +1,7 @@
 package pkg1.utilesdeusogeneral;
 
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Varios {
@@ -40,6 +42,22 @@ public class Varios {
         
         return num1 == num2;
     }
+    
+    
+    public void formasImprimir(ArrayList clientes) {
+        
+        clientes.forEach((cliente) -> {
+            System.out.println(cliente);
+        });
+        
+        for (Object cliente : clientes) {
+            System.out.println(cliente);
+        }
+        
+        clientes.forEach(cliente -> System.out.println(cliente));
+        clientes.forEach(System.out::println);
+    }        
+ 
 } 
         
         

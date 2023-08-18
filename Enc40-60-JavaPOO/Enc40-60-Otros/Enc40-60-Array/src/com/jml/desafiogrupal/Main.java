@@ -2,6 +2,7 @@ package com.jml.desafiogrupal;
 
 import Servicios.ClienteServicio;
 import Servicios.MenuServicio;
+import Servicios.RutinaServicio;
 
 public class Main {
 
@@ -9,8 +10,8 @@ public class Main {
         ClienteServicio clServicio = new ClienteServicio();
         clServicio.inicializarClientes();
         
-//        RutinaServicio rutServicio = new RutinaServicio();
-//        rutServicio.inicializarRutinas();
+        RutinaServicio rutServicio = new RutinaServicio();
+        rutServicio.inicializarRutinas();
         
         MenuServicio menuServicio = new MenuServicio();
         
@@ -31,12 +32,12 @@ public class Main {
                 case 4:
                     clServicio.eliminarCliente();
                     break;
-//                case 5:
-//                    rutServicio.obtenerRutinas();
-//                    break;
-//                case 6:
-//                    rutServicio.registrarRutina();
-//                    break;
+                case 5:
+                    rutServicio.obtenerRutinas();
+                    break;
+                case 6:
+                    rutServicio.registrarRutina();
+                    break;
 //                case 7:
 //                    rutServicio.actualizarRutina();
 //                    break;

@@ -34,14 +34,26 @@ public class ClienteServicio {
     /*************************************************************************************************/
     /*************************************************************************************************/
     /*************************************************************************************************/
+
+    public void obtenerClientes() {
+        System.out.println("");
+        System.out.println("------ DATOS  DE  LOS  CLIENTES -------");
+        
+        clientes.forEach((cliente) -> {
+            System.out.println(cliente);
+        });
+    }
+
+    /*************************************************************************************************/
+    /*************************************************************************************************/
+    /*************************************************************************************************/
     
     //validacion general con try & catc, fc registrar cliente, creando un objeto cliente
         
     public void registrarCliente() {
         Cliente clienteAux = new Cliente();
         boolean validacion;
-        
-
+    
         System.out.println("");
          
         do{
@@ -59,7 +71,6 @@ public class ClienteServicio {
                 //clienteAux.setPeso(Double.parseDouble(leer.next()));
                 System.out.println("Ingrese el objetivo");
                 clienteAux.setObjetivo(leer.next());
-                //catch (NumberFormatException e)
             } catch (Exception e) {
                 System.out.println("");
                 System.out.println("******************************************************************************");
@@ -191,31 +202,4 @@ public class ClienteServicio {
         
         return clienteOpcion;
     }
-
-    /*************************************************************************************************/
-    /*************************************************************************************************/
-    /*************************************************************************************************/
-
-    public void obtenerClientes() {
-        System.out.println("");
-        System.out.println("------ DATOS  DE  LOS  CLIENTES -------");
-        
-        clientes.forEach((cliente) -> {
-            System.out.println(cliente);
-        });
-
-
-//        for (Object cliente : clientes) {
-//            System.out.println(cliente);
-//        }
-        // clientes.forEach(cliente -> System.out.println(cliente));
-        // clientes.forEach(System.out::println);
-    }
 }
-
-
-/*RegistrarCliente: lo registra en el sistema.
-obtenerClientes(): devuelve una lista con todos los clientes registrados en el sistema.
-actualizarCliente(int id, String nombre, int edad, double altura, double peso, String objetivo): recibe el identificador
-de un cliente existente y los nuevos datos del cliente, y actualiza la información correspondiente en el sistema.
-eliminarCliente(int id): recibe el identificador de un cliente existente y lo elimina del sistema.*/
