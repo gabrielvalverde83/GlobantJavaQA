@@ -2,6 +2,7 @@ package pkg1.utilesdeusogeneral;
 
 import Servicios.ArraysClienteServicio;
 import Servicios.ArraysClienteMenuServicio;
+import Servicios.ArraysRutinaServicio;
 
 public class ArraysClienteMenuMain {
 
@@ -9,8 +10,8 @@ public class ArraysClienteMenuMain {
         ArraysClienteServicio clServicio = new ArraysClienteServicio();
         clServicio.inicializarClientes();
         
-//        RutinaServicio rutServicio = new RutinaServicio();
-//        rutServicio.inicializarRutinas();
+        ArraysRutinaServicio rutServicio = new ArraysRutinaServicio();
+        rutServicio.inicializarRutinas();
         
         ArraysClienteMenuServicio menuServicio = new ArraysClienteMenuServicio();
         
@@ -31,18 +32,18 @@ public class ArraysClienteMenuMain {
                 case 4:
                     clServicio.eliminarCliente();
                     break;
-//                case 5:
-//                    rutServicio.obtenerRutinas();
-//                    break;
-//                case 6:
-//                    rutServicio.registrarRutina();
-//                    break;
-//                case 7:
-//                    rutServicio.actualizarRutina();
-//                    break;
-//                case 8:
-//                    rutServicio.eliminarRutina();
-//                    break;
+                case 5:
+                    rutServicio.obtenerRutinas();
+                    break;
+                case 6:
+                    rutServicio.registrarRutina();
+                    break;
+                case 7:
+                    rutServicio.actualizarRutina();
+                    break;
+                case 8:
+                    rutServicio.eliminarRutina();
+                    break;
                 case 9:
                     System.out.println("FIN!!!");
                     break;

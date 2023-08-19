@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- *
- * @author vaiop
- */
 public class AlumnoServicios {
     Scanner leer = new Scanner(System.in);
     ArrayList<Alumno> listaAlumnos = new  ArrayList();
@@ -29,8 +25,11 @@ public class AlumnoServicios {
         
         a.setNotas(aux);
         return a;
-        
     }
+    
+    /************************************************************************************************************/
+    /************************************************************************************************************/
+    /************************************************************************************************************/
     
     public void crearLista(){
         String respuesta;
@@ -39,8 +38,11 @@ public class AlumnoServicios {
             System.out.println("Desea agregar otro Alumno? S/N");
             respuesta = leer.next().toUpperCase();
         }while(respuesta.equals("S"));
-    
     }
+    
+    /************************************************************************************************************/
+    /************************************************************************************************************/
+    /************************************************************************************************************/
     
     public void mostrarLista(){
         
@@ -61,7 +63,7 @@ public class AlumnoServicios {
                 }
             }
         }
-        System.out.println("El promedio es" + (suma/ 3)); 
+        System.out.println("El promedio es " + (suma/ 3)); 
     
     }
     

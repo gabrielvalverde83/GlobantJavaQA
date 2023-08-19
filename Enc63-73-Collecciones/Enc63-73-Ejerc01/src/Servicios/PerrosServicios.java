@@ -14,11 +14,11 @@ public class PerrosServicios {
         String respuesta;
         
         do{
-        System.out.println("Ingrese la raza del perro");
-        raza = leer.next();
-        razasPerros.add(raza);
-        System.out.println("Quiere ingresar más perros??? SI O cualquier letra para SALIR");
-        respuesta = leer.next().toUpperCase();
+            System.out.println("Ingrese la raza del perro");
+            raza = leer.next();
+            razasPerros.add(raza);
+            System.out.println("Quiere ingresar más perros??? SI O cualquier letra para SALIR");
+            respuesta = leer.next().toUpperCase();
         } while(respuesta.equals("SI"));
         
         for (String aux : razasPerros){

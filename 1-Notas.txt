@@ -4,7 +4,7 @@
 
 ejercicios con varias cosas aplicadas y hechos con amor
 
-* Enc 40-60-JavaPOOO ---- Otros --- Arrays --- error cuando quiero salir! y no me sale de 1 con el 9, en rutinas errores al buscasr
+* Enc 40-60-JavaPOOO ---- Otros --- Arrays 
 
 * Enc63-73-Collecciones ---- Otros --- Los 2 ejercicios
 

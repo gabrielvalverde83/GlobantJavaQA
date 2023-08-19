@@ -18,11 +18,11 @@ public class PerrosServicios {
         String respuesta;
         
         do{
-        System.out.println("Ingrese la raza del perro");
-        raza = leer.next();
-        razasPerros.add(raza);
-        System.out.println("Quiere ingresar más perros??? SI O cualquier letra para SALIR");
-        respuesta = leer.next().toUpperCase();
+            System.out.println("Ingrese la raza del perro");
+            raza = leer.next();
+            razasPerros.add(raza);
+            System.out.println("Quiere ingresar más perros??? SI O cualquier letra para SALIR");
+            respuesta = leer.next().toUpperCase();
         } while(respuesta.equals("SI"));
         
         razasPerros.add("caniche");
@@ -47,6 +47,10 @@ public class PerrosServicios {
         razasPerros.add("Lola");
     }
     
+    /***********************************************************************************************************/
+    /***********************************************************************************************************/
+    /***********************************************************************************************************/
+    
     public void mostrarPerros(){
         System.out.println("****************************************");
         System.out.println("Lista de perros");
@@ -54,6 +58,12 @@ public class PerrosServicios {
             System.out.println(aux);
         });
     }
+    
+    /***********************************************************************************************************/
+    /***********************************************************************************************************/
+    /***********************************************************************************************************/
+    
+    //atencion! al borrar de esta manera, no se borran todos, deja algunos, lo mejor es utilizar iterator
     
     public void eliminarPerro(){
         
@@ -73,6 +83,10 @@ public class PerrosServicios {
     
     }
     
+    /***********************************************************************************************************/
+    /***********************************************************************************************************/
+    /***********************************************************************************************************/
+
     public void eliminarRazaIterator(){
         
         System.out.println("****************************************");

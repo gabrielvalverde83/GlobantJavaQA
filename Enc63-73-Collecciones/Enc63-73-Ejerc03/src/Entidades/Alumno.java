@@ -2,10 +2,6 @@ package Entidades;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author vaiop
- */
 public class Alumno {
     
     private String nombre;
