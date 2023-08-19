@@ -2,12 +2,12 @@ package pkg1.utilesdeusogeneral;
 
 import java.util.Scanner;
 
-
 public class validaciones {
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
     
     Scanner leer = new Scanner(System.in);
+    
     
     String palabra = "hola";
     int longPalabra = palabra.length();
@@ -30,7 +30,7 @@ public class validaciones {
             System.out.println("Ingrese un numero cuyo valor debe ser mayor a 1 y menor a " + max );
             validacion = true;    
             try {
-                    ingresosMax = Integer.parseInt(leer.next());
+                ingresosMax = Integer.parseInt(leer.next());
             }catch (Exception e) {
                 validacion = false;
                 System.out.println("Error - Ingrese un número valido");
@@ -101,7 +101,7 @@ public class validaciones {
 
         do {
             System.out.println("Ingrese una opcion");
-            opcN = leer.nextInt();
+            opcN = verificarEntero();
 
             switch (opcN) {
                 case 1:
@@ -124,6 +124,7 @@ public class validaciones {
             }
 
         } while (opcN != 5 || !opcL.equals("S"));
+        
 
     /********************************************************************************************************/
     /********************************************************************************************************/
@@ -138,17 +139,7 @@ public class validaciones {
             System.out.println("En la posición de la columna elegida, la palabra no cabe o está fuera de rango de la matriz - Elija una posición menor");
         }
     }while(cabe == false || columna<0);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     /********************************************************************************************************/
     /********************************************************************************************************/
@@ -168,16 +159,56 @@ public class validaciones {
             }
         } while (!respuesta.equals("S") && !respuesta.equals("N"));
     } while (respuesta.equals("S"));
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
+    
+    /********************************************************************************************************/
+    /********************************************************************************************************/
+    /********************************************************************************************************/
+    
+    // validar la entrada de un entero
+    
+    public int verificarEntero(){
+        
+        Scanner leer = new Scanner(System.in);
+        int opcion = 0;
+        boolean validacion;
+        
+        do {
+            validacion = true;    
+            try {
+                opcion = Integer.parseInt(leer.next());
+            }catch (Exception e) {
+                validacion = false;
+                System.out.println("Error - Ingrese un número valido");
+            }
+        } while (validacion == false);
+        return opcion;
+    }
+    
+    /********************************************************************************************************/
+    /********************************************************************************************************/
+    /********************************************************************************************************/
+    
+    // validar la entrada de un entero
+    
+    public double verificarDouble(){
+        
+        Scanner leer = new Scanner(System.in);
+        double opcion = 0;
+        boolean validacion;
+        
+        do {
+            validacion = true;    
+            try {
+                opcion = Double.parseDouble(leer.next());
+            }catch (Exception e) {
+                validacion = false;
+                System.out.println("Error - Ingrese un número valido");
+            }
+        } while (validacion == false);
+        return opcion;
+    }
+    
+    
+    
 }   

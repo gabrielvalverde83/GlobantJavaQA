@@ -8,7 +8,7 @@ public class ArraysClienteMenuServicio {
     
     public int menu(){
         
-        int opcion = 0;
+        int opcion;
         System.out.println("");
         System.out.println("**************************************");
         System.out.println("************* MENU *******************");
@@ -29,10 +29,30 @@ public class ArraysClienteMenuServicio {
                     + "\n9 - SALIR XXXXXXXX");
 
         do{
-            opcion = leer.nextInt();
+            opcion = verificarEntero();
             if(opcion < 1 || opcion > 9){System.out.println("Error - Ingrese una opción válida");}
         } while(opcion < 1 || opcion > 9);
         
         return opcion;
     }
+    
+    public int verificarEntero(){
+        
+        int opcion = 0;
+        boolean validacion;
+        
+        do {
+            validacion = true;    
+            try {
+                opcion = Integer.parseInt(leer.next());
+            }catch (Exception e) {
+                validacion = false;
+                System.out.println("Error - Ingrese un número valido");
+            }
+        } while (validacion == false);
+        return opcion;
+    }
+    
+    
+    
 }
