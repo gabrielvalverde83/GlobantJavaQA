@@ -38,12 +38,12 @@ public class Main {
                 case 6:
                     rutServicio.registrarRutina();
                     break;
-//                case 7:
-//                    rutServicio.actualizarRutina();
-//                    break;
-//                case 8:
-//                    rutServicio.eliminarRutina();
-//                    break;
+                case 7:
+                    rutServicio.actualizarRutina();
+                    break;
+                case 8:
+                    rutServicio.eliminarRutina();
+                    break;
                 case 9:
                     System.out.println("FIN!!!");
                     break;

@@ -29,10 +29,7 @@ public class ArraysClienteConId {
        
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", edad=" + edad + ", altura=" + altura + ", peso=" + peso + ", objetivo=" + objetivo + '}';
-    }
+    
 
     /**
      * @return the id
@@ -114,6 +111,11 @@ public class ArraysClienteConId {
      */
     public void setObjetivo(String objetivo) {
         this.objetivo = objetivo;
+    }
+    
+    @Override
+    public String toString() {
+        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", edad=" + edad + ", altura=" + altura + ", peso=" + peso + ", objetivo=" + objetivo + '}';
     }
    
   

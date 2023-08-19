@@ -2,6 +2,7 @@ package Servicios;
 
 import Entidades.Rutina;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -52,7 +53,6 @@ public class RutinaServicio {
     public void obtenerRutinas() {
         System.out.println("");
         System.out.println("------ DATOS  DE  LAS  RUTINAS -------");
-        
         rutinas.forEach(System.out::println);
     }
     
@@ -63,12 +63,27 @@ public class RutinaServicio {
     public void registrarRutina() {
         Rutina rutinaAux = new Rutina();
         ArrayList<String> ejerciciosAuxReg = new ArrayList();
-        String respuesta;
-        String ejercicio;
-
+        
         System.out.println("");
         System.out.println("Introduzca el nombre de la rutina");
         rutinaAux.setNombre(leer.next());
+        
+        registrarEjercicios(ejerciciosAuxReg);   
+
+        rutinaAux.setId();
+        rutinaAux.setEjercicios(ejerciciosAuxReg);
+        rutinas.add(rutinaAux);
+    }    
+    
+     /*************************************************************************************************/
+    /*************************************************************************************************/
+    /*************************************************************************************************/
+    
+    public void registrarEjercicios(ArrayList ejerciciosAuxReg){
+        
+        String respuesta;
+        String ejercicio;
+        
         do {
             System.out.println("Introduzca el número de las repeticiones");
             ejercicio = leer.next();
@@ -85,11 +100,8 @@ public class RutinaServicio {
                 }
             } while (!respuesta.equals("S") && !respuesta.equals("N"));
         } while (respuesta.equals("S"));
-
-        rutinaAux.setId();
-        rutinaAux.setEjercicios(ejerciciosAuxReg);
-        rutinas.add(rutinaAux);
-    }    
+    }   
+    
     
     /*************************************************************************************************/
     /*************************************************************************************************/
@@ -97,21 +109,23 @@ public class RutinaServicio {
     
     public void actualizarRutina() {
 
-            Rutina opcion = encontrarRutinas();
+        Rutina opcion = encontrarRutinas();
+        ArrayList<String> ejerciciosAuxReg = new ArrayList();
+
+        if (opcion.getNombre() != null) {
             
-            System.out.println("");
-            System.out.println("Seleccione el dato a modificar:\n"
+            int datoAMod;
+
+            boolean salir;
+            do {
+                System.out.println("");
+                System.out.println("Seleccione el dato a modificar:\n"
                     + "\n 1.NOMBRE"
                     + "\n 2.EJERCICIOS"
                     + "\n 9.Salir sin modificar");
-            
-            int datoAMod;
-              
-            boolean salir;
-            do{
-                do{
+                do {
                     datoAMod = leer.nextInt();
-                } while ((datoAMod <1 || datoAMod >2) && datoAMod!=9);
+                } while ((datoAMod < 1 || datoAMod > 2) && datoAMod != 9);
                 salir = true;
                 switch (datoAMod) {
                     case 1:
@@ -119,8 +133,9 @@ public class RutinaServicio {
                         opcion.setNombre(leer.next());
                         break;
                     case 2:
-                        System.out.println("Ingrese la edad correcta");
-                        //hacer una fc para ingresar repeticiones, series... y aplicarlo al de registrar tambien asi reutilizamos
+                        eliminarTodosElementosArray(opcion);
+                        registrarEjercicios(ejerciciosAuxReg);
+                        opcion.setEjercicios(ejerciciosAuxReg);
                         break;
                     case 9:
                         System.out.println("Saliendo");
@@ -128,24 +143,49 @@ public class RutinaServicio {
                         break;
                     default:
                         System.out.println("Error - No ingreso dato valido");
+                        System.out.println("Vuelva a ingresar una opción para modificar y sino 9 para salir");
                 }
-                System.out.println("Vuelva a ingresar una opción para modificar y sino 9 para salir");
-            } while(salir == false);           
+                
+            } while (salir == true);
             
-             System.out.println("Los datos actualizados son");
-             System.out.println(opcion);
+            System.out.println("");
+            System.out.println("Los datos actualizados son");
+            System.out.println(opcion);
+        } else {
+            System.out.println("");
+            System.out.println("Saliendo sin actualizar por no encontrar rutina coincidente");
+        }
     }
 
     /*************************************************************************************************/
     /*************************************************************************************************/
     /*************************************************************************************************/
         
-    public void eliminarCliente() {
+    public void eliminarRutina() {
         Rutina opcion=encontrarRutinas();
-        rutinas.remove(opcion);
-        obtenerRutinas();
+        
+        if(opcion.getNombre() != null){rutinas.remove(opcion);}
+        else{
+            System.out.println("");
+            System.out.println("Saliendo sin eliminar por no encontrar rutina coincidente");
+        }
     }
     
+    /*************************************************************************************************/
+    /*************************************************************************************************/
+    /*************************************************************************************************/
+        
+    public void eliminarTodosElementosArray(Rutina opcion){
+        
+        Iterator<String> it = opcion.getEjercicios().iterator();
+        String aux;
+        
+        while(it.hasNext()){
+            aux = it.next();
+            it.remove();
+        }
+    }
+
     /*************************************************************************************************/
     /*************************************************************************************************/
     /*************************************************************************************************/
@@ -176,20 +216,24 @@ public class RutinaServicio {
             }
         } while (true == noEncontrado && !nombre.equals("!"));
 
-        String respuesta;
         Rutina rutinaOpcion = new Rutina();
-       
+        
         if (resultset.size() > 1) {
-            System.out.println("Hay más de una coincidencia con su búsqueda");
+            String respuesta;
+            System.out.println("Hay más de 1 coincidencia con su búsqueda");
             System.out.println("Ingrese el id de la persona a seleccionar del siguiente listado");
             resultset.forEach(System.out::println);
             int seleccion = leer.nextInt();
-            Optional<Rutina> clienteEncontrado = rutinas.stream()
+            Optional<Rutina> clienteEncontrado = resultset.stream()
                     .filter(rutina -> rutina.getId() == seleccion)
                     .findFirst();
             rutinaOpcion = clienteEncontrado.get();
-        } else {
+        } else if(resultset.size() == 1){
             rutinaOpcion = resultset.get(0);
+        } else {
+            System.out.println("");
+            System.out.println("No se encontraron resultados");
+            System.out.println("Saliendo");
         }
         
         return rutinaOpcion;

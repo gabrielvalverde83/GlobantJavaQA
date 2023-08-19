@@ -92,56 +92,61 @@ public class ClienteServicio {
 
             Cliente opcion = encontrarClientes();
             
-            System.out.println("");
-            System.out.println("Seleccione el dato a modificar:\n"
-                    + "\n 1.NOMBRE"
-                    + "\n 2.EDAD"
-                    + "\n 3.ALTURA"
-                    + "\n 4.PESO"
-                    + "\n 5.OBJETIVO"
-                    + "\n 9.Salir sin modificar");
-            
-            int datoAMod;
+            if(opcion.getNombre() != null){
+                int datoAMod;
               
-            boolean salir;
-            do{
-                do{
-                    datoAMod = leer.nextInt();
-                } while ((datoAMod <1 || datoAMod >6) && datoAMod!=9);
-                salir = true;
-                switch (datoAMod) {
-                    case 1:
-                        System.out.println("Ingrese el nombre correcto");
-                        opcion.setNombre(leer.next());
-                        break;
-                    case 2:
-                        System.out.println("Ingrese la edad correcta");
-                        opcion.setEdad(leer.nextInt());
-                        break;
-                    case 3:
-                        System.out.println("Ingrese el altura correcto");
-                        opcion.setAltura(Double.parseDouble(leer.next()));
-                        break;
-                    case 4:
-                        System.out.println("Ingrese el peso correcto");
-                        opcion.setPeso(Double.parseDouble(leer.next()));
-                        break;
-                    case 5:
-                        System.out.println("Ingrese el objetivo correcto");
-                        opcion.setObjetivo(leer.next());
-                        break;
-                    case 9:
-                        System.out.println("Saliendo");
-                        salir = false;
-                        break;
-                    default:
-                        System.out.println("Error - No ingreso dato valido");
-                }
-                System.out.println("Vuelva a ingresar una opción para modificar y sino 9 para salir");
-            } while(salir == false);           
-            
-             System.out.println("Los datos actualizados son");
-             System.out.println(opcion);
+                boolean salir;
+                do{ 
+                    System.out.println("");
+                    System.out.println("Seleccione el dato a modificar:\n"
+                        + "\n 1.NOMBRE"
+                        + "\n 2.EDAD"
+                        + "\n 3.ALTURA"
+                        + "\n 4.PESO"
+                        + "\n 5.OBJETIVO"
+                        + "\n 9.Salir sin modificar");
+                    do{
+                        datoAMod = leer.nextInt();
+                    } while ((datoAMod <1 || datoAMod >6) && datoAMod!=9);
+                    salir = true;
+                    switch (datoAMod) {
+                        case 1:
+                            System.out.println("Ingrese el nombre correcto");
+                            opcion.setNombre(leer.next());
+                            break;
+                        case 2:
+                            System.out.println("Ingrese la edad correcta");
+                            opcion.setEdad(leer.nextInt());
+                            break;
+                        case 3:
+                            System.out.println("Ingrese el altura correcto");
+                            opcion.setAltura(Double.parseDouble(leer.next()));
+                            break;
+                        case 4:
+                            System.out.println("Ingrese el peso correcto");
+                            opcion.setPeso(Double.parseDouble(leer.next()));
+                            break;
+                        case 5:
+                            System.out.println("Ingrese el objetivo correcto");
+                            opcion.setObjetivo(leer.next());
+                            break;
+                        case 9:
+                            System.out.println("Saliendo");
+                            salir = false;
+                            break;
+                        default:
+                            System.out.println("Error - No ingreso dato valido");
+                            System.out.println("Vuelva a ingresar una opción para modificar y sino 9 para salir");
+                    }
+                } while(salir == true);           
+                
+                System.out.println("");
+                System.out.println("Los datos actualizados son");
+                System.out.println(opcion);
+            } else {
+                System.out.println("");
+                System.out.println("Saliendo sin actualizar por no encontrar cliente coincidente");
+            }
     }
 
     /*************************************************************************************************/
@@ -150,8 +155,13 @@ public class ClienteServicio {
         
     public void eliminarCliente() {
         Cliente opcion=encontrarClientes();
-        clientes.remove(opcion);
-        obtenerClientes();
+        
+        if(opcion.getNombre() != null){clientes.remove(opcion);}
+        else{
+            System.out.println("");
+            System.out.println("Saliendo sin eliminar por no encontrar cliente coincidente");
+        }
+        
     }
     
     /*************************************************************************************************/
@@ -178,6 +188,7 @@ public class ClienteServicio {
             }
             
             if (resultset.isEmpty()) {
+                System.out.println("");
                 System.out.println("No se han encontrado clientes coincidentes");
                 System.out.println("Pruebe con otro nombre o ! para salir");
                 noEncontrado = true;
@@ -188,7 +199,8 @@ public class ClienteServicio {
         Cliente clienteOpcion = new Cliente();
        
         if (resultset.size() > 1) {
-            System.out.println("Hay más de una coincidencia con su búsqueda");
+            System.out.println("");
+            System.out.println("Hay más de 1 coincidencia con su búsqueda");
             System.out.println("Ingrese el id de la persona a seleccionar del siguiente listado");
             resultset.forEach(System.out::println);
             int seleccion = leer.nextInt();
@@ -196,8 +208,12 @@ public class ClienteServicio {
                     .filter(cliente -> cliente.getId() == seleccion)
                     .findFirst();
             clienteOpcion = clienteEncontrado.get();
-        } else {
+        } else if(resultset.size() == 1){
             clienteOpcion = resultset.get(0);
+        } else {
+            System.out.println("");
+            System.out.println("No se encontraron resultados");
+            System.out.println("Saliendo");
         }
         
         return clienteOpcion;

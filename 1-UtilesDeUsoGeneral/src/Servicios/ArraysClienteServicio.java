@@ -2,6 +2,7 @@ package Servicios;
 
 import Entidades.ArraysClienteConId;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -208,15 +209,51 @@ public class ArraysClienteServicio {
         clientes.forEach((cliente) -> {
             System.out.println(cliente);
         });
-
-
-//        for (Object cliente : clientes) {
-//            System.out.println(cliente);
-//        }
-        // clientes.forEach(cliente -> System.out.println(cliente));
-        // clientes.forEach(System.out::println);
     }
-}
+    
+    
+    /*************************************************************************************************/
+    /*************************************************************************************************/
+    /*************************************************************************************************/
+  
+    // otras cosas de Arrays //////////////////
+    
+    // borrando todos los elementos de la lista   
+    
+    
+    public void eliminarTodosElementosArray(ArrayList clientes){
+        
+        Iterator<String> it = clientes.iterator();
+        String aux;
+        
+        while(it.hasNext()){
+            aux = it.next();
+            
+            //if(aux.equals("tal cosa")){it.remove;}
+
+            it.remove();
+        }
+    }
+
+    
+    /*************************************************************************************************/
+    /*************************************************************************************************/
+    /*************************************************************************************************/
+    
+
+
+    
+        
+        
+ }
+    
+    
+    
+    
+    
+    
+    
+
 
 
 /*RegistrarCliente: lo registra en el sistema.
