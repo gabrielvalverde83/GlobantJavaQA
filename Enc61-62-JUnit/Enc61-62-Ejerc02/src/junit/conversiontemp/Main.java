@@ -17,10 +17,10 @@ public class Main {
     public static void main(String[] args) {
         
         TemperaturaServicios ts = new TemperaturaServicios();
-        Temperatura temperatura = ts.crearTemperatura();
+        Temperatura temp = ts.crearTemperatura();
         
-        ts.calcularTemperaturaFarenheit(temperatura);
-        ts.calcularTemperaturaKelvin(temperatura);
+        ts.calcularTemperaturaFarenheit(temp);
+        ts.calcularTemperaturaKelvin(temp);
 
     }
     

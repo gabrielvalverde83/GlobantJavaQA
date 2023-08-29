@@ -1,8 +1,14 @@
-40-60-Otros
-61-62-todos
+Termina/Revisar/Pendientes:
+
+61-62-todos - Pendiente: extra extra
 63-73-extras
+74-84-revisar todos
+
+/*********************************************************************************/
 
 ejercicios con varias cosas aplicadas y hechos con amor
+
+* Enc 40-60-JavaPOOO - EjercicioExtra06
 
 * Enc 40-60-JavaPOOO ---- Otros --- Arrays 
 

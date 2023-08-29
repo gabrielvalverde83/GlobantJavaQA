@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Enc74-84-EjercExtra03">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="" visibility="public" xPosition="66.0" yPosition="5.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private" isTransient="true"/>
+        <Field name="documento" type="String" visibility="private"/>
+        <Field name="mail" type="String" visibility="private"/>
+        <Field name="telefono" type="String" visibility="private"/>
+        <Field name="polizas" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Vehiculo" package="" visibility="public" xPosition="365.0" yPosition="24.0">
+      <Fields>
+        <Field name="Marca" type="String" visibility="private"/>
+        <Field name="Modelo" type="String" visibility="private"/>
+        <Field name="anio" type="int" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Poliza" package="" visibility="public" xPosition="66.0" yPosition="254.0">
+      <Fields>
+        <Field name="numero" type="int" visibility="private"/>
+        <Field name="inicio" type="Date" visibility="private"/>
+        <Field name="fin" type="Date" visibility="private"/>
+        <Field name="cuotas" type="ArrayList" visibility="private"/>
+        <Field name="formaPago" type="String" visibility="private"/>
+        <Field name="montoTotalAseg" type="int" visibility="private"/>
+        <Field name="granizo" type="boolean" visibility="private"/>
+        <Field name="montoGranizo" type="int" visibility="private"/>
+        <Field name="tipoCobert" type="String" visibility="private"/>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="vehiculo" type="Vehiculo" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Cuota" package="" visibility="public" xPosition="365.0" yPosition="357.0">
+      <Fields>
+        <Field name="numCuota" type="int" visibility="private"/>
+        <Field name="montoCuota" type="int" visibility="private"/>
+        <Field name="pagada" type="boolean" visibility="private"/>
+        <Field name="fechaVencim" type="Date" visibility="private"/>
+        <Field name="formaPago" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cuotas" source="Poliza" target="Cuota" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="vehiculo" source="Poliza" target="Vehiculo" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="polizas" source="Cliente" target="Poliza" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

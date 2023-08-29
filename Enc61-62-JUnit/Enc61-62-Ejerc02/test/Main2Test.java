@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import Servicios.TemperaturaServicios;
 import Entidades.Temperatura;
 import org.junit.After;
@@ -12,11 +6,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
-/**
- *
- * @author gabri
- */
 public class Main2Test {
     
     public Main2Test() {
@@ -54,9 +45,19 @@ public class Main2Test {
         assertEquals(86.0, ts.calcularTemperaturaFarenheit(new Temperatura(30.0)), 0);
     }
     
+    //@Ignore
     @Test
     public void deberiaConvertirAKelvin(){
         assertEquals(303.15, ts.calcularTemperaturaKelvin(new Temperatura(30.0)), 0);
+    }
+    
+    @Test
+    public void deberiaActivarODesactivar(){
+        Temperatura temp = new Temperatura(40.0);
+        assertTrue(temp.isActive());
+        temp.setActive(false);
+        assertFalse(temp.isActive());
+    
     }
     
     

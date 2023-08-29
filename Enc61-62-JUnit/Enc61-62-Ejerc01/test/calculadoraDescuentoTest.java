@@ -13,10 +13,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Ignore;
 
-/**
- *
- * @author VBehe
- */
 public class calculadoraDescuentoTest {
     
     public calculadoraDescuentoTest() {
@@ -36,7 +32,7 @@ public class calculadoraDescuentoTest {
     @Before
     public void setUp() {
         
-         c1 = new calculadoraServicio();
+        c1 = new calculadoraServicio();
     }
     
     @After
@@ -47,7 +43,7 @@ public class calculadoraDescuentoTest {
    @Test
    public void deberiaSerDiez() {
        
-       assertEquals(0,c1.calculadoraDescuento(120.5,0.10),0);
+       //assertEquals(0,c1.calculadoraDescuento(120.5,0.10),0); //para probar si fallaba
        assertEquals(12.05,c1.calculadoraDescuento(120.5,0.10),0);
        assertEquals(12.05,c1.calculadoraDescuento(120.5,0.10),0);
        

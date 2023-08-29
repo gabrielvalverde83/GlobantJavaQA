@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 public class TareaServicios {
     
-    private ArrayList<String> tareas = new ArrayList();
-    private Scanner leer = new Scanner(System.in).useDelimiter("\n");
+    ArrayList<String> tareas = new ArrayList();
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
+    
+    /*****************************************************************************************************/
     
     public void crearTarea(){
         System.out.println("Introduzca la tarea");
@@ -20,6 +22,8 @@ public class TareaServicios {
         tareas.add(tarea);
     }
     
+    /*****************************************************************************************************/
+    
     public void mostrarTares(){
         System.out.println("");
         System.out.println("********************************************");
@@ -32,6 +36,8 @@ public class TareaServicios {
         System.out.println("");
         System.out.println("Hay " + tareas.size() + " tareas");
     }
+    
+    /*****************************************************************************************************/
     
     public void eliminarTarea(){
         System.out.println("");
