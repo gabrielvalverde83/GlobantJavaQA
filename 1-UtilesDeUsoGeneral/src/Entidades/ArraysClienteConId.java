@@ -18,9 +18,9 @@ public class ArraysClienteConId {
     }
 
     public ArraysClienteConId(String nombre, int edad, double altura, double peso, String objetivo) {
-        //this();                     //PROBLEMA ID
+                                      //PROBLEMA ID
         internalId++;                   //inicia del id = 1
-        id = internalId;                //lo hago asi para evitar el PROBLEMA ID, y cuando ingreso por teclado lo incremento desde el set
+        this.id = internalId;                //lo hago asi para evitar el PROBLEMA ID, y cuando ingreso por teclado lo incremento desde el set
         this.nombre = nombre;
         this.edad = edad;
         this.altura = altura;
@@ -29,18 +29,13 @@ public class ArraysClienteConId {
        
     }
 
-    
-
-    /**
-     * @return the id
-     */
     public int getId() {
         return id;
     }
     
     public void setId() {       //PROBLEMA ID
         internalId++;   
-        id = internalId; 
+        this.id = internalId; 
     }
 
     /**

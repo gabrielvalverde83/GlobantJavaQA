@@ -34,16 +34,19 @@ public class Main {
 
         for (Persona persona : listaPersonas) {
             otro = true;
+            System.out.println("");
             System.out.println("PERROS DISPONIBLES");
             for (Perro listaPerro : listaPerros) {
                 System.out.println(listaPerro.getNombre());
             }
             while (otro) {
+                System.out.println("");
                 System.out.println(persona.getNombre() + ", nombre del perro que quiere adoptar");
                 nombreAdoptar = s.next();
                 for (Perro perro : listaPerros) {
                     if (perro.getNombre().equalsIgnoreCase(nombreAdoptar)) {
                         persona.setPerro(perro);
+                        System.out.println("");
                         System.out.println("Adoptaste a " + perro.getNombre());
                         otro = false;
                         listaPerros.remove(perro);
@@ -51,6 +54,7 @@ public class Main {
                     }
                 }
                 if (otro) {
+                    System.out.println("");
                     System.out.println("El perro ya está adoptado o no existe");
                 }
             }

@@ -43,14 +43,15 @@ public class Main {
 
     public static void main(String[] args) {
         
-        //RevolverAgua revolver = new RevolverAgua();
         RevolverAguaServicios revolverServ = new RevolverAguaServicios();
         JugadorServicios jserv = new JugadorServicios();
+        RevolverAgua revolver = new RevolverAgua();
         
-        RevolverAgua revolver = revolverServ.llenarRevolver();
+        revolverServ.llenarRevolver(revolver);
         
         jserv.inicializar();
         
-        jserv.timerDisparos();
+        jserv.timerDisparos(revolver);
+        
     }
 }

@@ -4,14 +4,13 @@ import Entidades.RevolverAgua;
 
 public class RevolverAguaServicios {
     
-    RevolverAgua revolver = new RevolverAgua();
-
-    
-    public void llenarRevolver(){
+    public RevolverAgua llenarRevolver(RevolverAgua revolver){
         
         revolver.setPosicAct(1);
         
         revolver.setPosicAgua(rellenar());
+        
+        return revolver;
         
     }
     
