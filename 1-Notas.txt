@@ -1,8 +1,11 @@
 Termina/Revisar/Pendientes:
 
-61-62-todos - Pendiente: extra extra
-63-73-extras
-74-84-revisar todos
+61-62 - Revisar desde el Ejerc03 en adelante
+61-62 - Pendiente de hacer: extra extra
+63-73 - extras - Falta terminar el del hotel: Desafio Colecciones
+74-84 - Revisar diagramas de los primeros ya terminados
+74-84 - Falta terminar: extras02 y 03
+74-84 - Pendiente de hacer: Estra04
 
 /*********************************************************************************/
 
@@ -14,3 +17,4 @@ ejercicios con varias cosas aplicadas y hechos con amor
 
 * Enc63-73-Collecciones ---- Otros --- Los 2 ejercicios
 
+* Enc 74-84
