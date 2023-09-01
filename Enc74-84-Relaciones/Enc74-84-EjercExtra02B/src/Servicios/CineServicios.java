@@ -1,22 +1,14 @@
 package Servicios;
 
 import Entidades.Cine;
+import Entidades.Butaca;
 
 public class CineServicios {
     
-    
-    String [] butaca;
-    
-    public void inicializarButacas(Cine cine){
-        
-        
-        
-        for(int)
+    //String matrizAux [] = new String [3];
     
     
     
-    
-    }
     
     
     

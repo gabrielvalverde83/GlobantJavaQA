@@ -4,7 +4,7 @@ package Entidades;
 
 public class Cine {
     
-    private Butaca [][] matrizButacas;
+    private Butaca [][] matrizButacas = new Butaca [8][6];
     private String pelicula;
     private int precio;
     
@@ -20,8 +20,8 @@ public class Cine {
         return matrizButacas;
     }
 
-    public void setMatrizButacas(Butaca[][] matrizButacas) {
-        this.matrizButacas = matrizButacas;
+    public void setMatrizButacas(int i, char j, Butaca valor) {
+        this.matrizButacas[i][j]= valor;
     }
 
     public String getPelicula() {
