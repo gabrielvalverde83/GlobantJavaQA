@@ -1,4 +1,4 @@
-Termina/Revisar/Pendientes:
+Terminar/Revisar/Pendientes:
 
 61-62 - Revisar desde el Ejerc03 en adelante
 61-62 - Pendiente de hacer: extra extra

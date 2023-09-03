@@ -5,22 +5,17 @@ import java.util.Arrays;
 public class Cine {
     
     private Butaca matrizButaca[][] = new Butaca[8][6];
-    private String pelicula;
+    private Pelicula pelicula;
     private int precio;
     
     public Cine() {
     }
 
-    public Cine(String pelicula, int precio) {
-        this.pelicula = pelicula;
-        this.precio = precio;
-    }
-
-    public String getPelicula() {
+    public Pelicula getPelicula() {
         return pelicula;
     }
 
-    public void setPelicula(String pelicula) {
+    public void setPelicula(Pelicula pelicula) {
         this.pelicula = pelicula;
     }
 

@@ -76,7 +76,38 @@ public class Bucles {
              /********************************************************************************************************/
             /********************************************************************************************************/
             /********************************************************************************************************/
+                
             
+            String columna;
+            boolean validacion;
+
+            do{
+                columna = leer.next().toUpperCase();
+                validacion = true;
+                switch (columna) {
+                    case "A":
+                        columna = "0";
+                        break;
+                    case "B":
+                        columna = "1";
+                        break;
+                    case "C":
+                        columna = "2";
+                        break;
+                    case "D":
+                        columna = "3";
+                        break;
+                    case "E":
+                        columna = "4";
+                        break;
+                    case "F":
+                        columna = "5";
+                        break;
+                    default:
+                        System.out.println("Ingrese opción válida");
+                        validacion = false;
+                }
+            }while(validacion == false);
             
         
 

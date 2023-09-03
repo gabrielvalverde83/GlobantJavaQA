@@ -4,7 +4,9 @@ package Entidades;
 public class Butaca {
     
     private String [] butaca = new String [3];  //Fila - Asiento - Ocupado
-
+    
+    /********************************************************************************/
+    
     public Butaca() {
     }
     
@@ -22,6 +24,11 @@ public class Butaca {
     public void setButaca(String[] butaca) {
         this.butaca = butaca;
     }
+    
+    public void setButacaOcup(int i) {
+        this.butaca[i] = "X ";
+    }
+    
 
     @Override
     public String toString() {
