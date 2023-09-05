@@ -25,9 +25,15 @@ public class Butaca {
         this.butaca = butaca;
     }
     
-    public void setButacaOcup(int i) {
-        this.butaca[i] = "X ";
+    public void setButacaOcup() {
+        this.butaca[2] = " X";
     }
+    
+    public void setButacaOcupP(int i) {
+        this.butaca[i] = " X";
+    }
+    
+    
     
 
     @Override

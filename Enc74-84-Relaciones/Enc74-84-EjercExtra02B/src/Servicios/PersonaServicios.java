@@ -2,6 +2,7 @@ package Servicios;
 
 import Entidades.Persona;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PersonaServicios {
     
@@ -36,6 +37,10 @@ public class PersonaServicios {
         listadoPersonas.add(new Persona("Ceci", 66, 10));
         listadoPersonas.add(new Persona("Marcelo", 88, 11));
         
+        for (Iterator<Persona> iterator = listadoPersonas.iterator(); iterator.hasNext();) {
+                Persona next = iterator.next();
+                System.out.println(next);
+        }
              
         return listadoPersonas;
     }

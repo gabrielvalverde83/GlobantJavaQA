@@ -7,6 +7,8 @@ public class Cine {
     private Butaca matrizButaca[][] = new Butaca[8][6];
     private Pelicula pelicula;
     private int precio;
+    private static int capacidad = 48;
+    private int capacidadCont;
     
     public Cine() {
     }
@@ -33,7 +35,21 @@ public class Cine {
 
     public void setMatrizButaca(int i, char j, Butaca butaca) {
         this.matrizButaca[i][j] = butaca;
+        capacidad--;
+        this.capacidadCont = capacidad;
     }
+
+    public void setCapacidadCont() {
+        capacidad--;
+        this.capacidadCont = capacidad;
+    }
+
+    public int getCapacidadCont() {
+        return capacidadCont;
+    }
+
+
+
 
     @Override
     public String toString() {
