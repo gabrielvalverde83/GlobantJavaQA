@@ -3,7 +3,7 @@ Terminar/Revisar/Pendientes:
 61-62 - Revisar desde el Ejerc03 en adelante
 61-62 - Pendiente de hacer: extra extra
 63-73 - extras - Falta terminar el del hotel: Desafio Colecciones
-74-84 - Falta terminar: extras02 y 03
+74-84 - Falta terminar: extra03
 74-84 - Pendiente de hacer: Estra04
 
 /*********************************************************************************/

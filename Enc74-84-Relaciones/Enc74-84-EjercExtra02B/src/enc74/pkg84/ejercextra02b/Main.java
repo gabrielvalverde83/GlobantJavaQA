@@ -21,7 +21,7 @@ public class Main {
         cineServ.llenarButacasAleat();
         
         cineServ.ubicarPersona();
-        persServ.listadoPersonas();
+        //persServ.listadoPersonas();
         
         cineServ.ubicarAleatoriamPersonas(persServ.listadoPersonas());
 

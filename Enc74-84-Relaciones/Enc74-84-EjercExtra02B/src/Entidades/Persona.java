@@ -50,10 +50,10 @@ public class Persona {
     public void setDinero(int dinero) {
         this.dinero = dinero;
     }
-    
-    
-    
-    
+
+    public String getId() {
+        return id;
+    }
 
     @Override
     public String toString() {

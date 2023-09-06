@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DesafioRelacionesClase10-2">
+  <ClassDiagramComponents>
+    <Class name="Main" package="desafiorelacionesclase10" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Producto" package="Entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="contadorID" type="Integer" visibility="private" isStatic="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+        <Field name="inventario" type="List&lt;Integer&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="double" name="precio"/>
+          <Argument type="ArrayList&lt;Integer&gt;" name="inventario"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getPrecio" returnType="double" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="double" name="precio"/>
+        </Method>
+        <Method name="getInventario" returnType="List&lt;Integer&gt;" visibility="public"/>
+        <Method name="setInventario" returnType="void" visibility="public">
+          <Argument type="int" name="inventario"/>
+        </Method>
+        <Method name="setNuevoStock" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="Integer" name="valor"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tienda" package="Entidades" visibility="public" xPosition="1253.0" yPosition="498.0">
+      <Fields>
+        <Field name="contadorIDTienda" type="int" visibility="private" isStatic="true"/>
+        <Field name="idTienda" type="Integer" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="direccion"/>
+          <Argument type="String" name="representante"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdTienda" returnType="Integer" visibility="public"/>
+        <Method name="setIdTienda" returnType="void" visibility="public"/>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getRepresentante" returnType="String" visibility="public"/>
+        <Method name="setRepresentante" returnType="void" visibility="public">
+          <Argument type="String" name="representante"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ProductoServicio" package="Servicio" visibility="public" xPosition="343.0" yPosition="561.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="private"/>
+        <Field name="listaProductos" type="ArrayList&lt;Producto&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="inicializar" returnType="void" visibility="public">
+          <Argument type="int" name="tamanioListaTiendas"/>
+        </Method>
+        <Method name="crearProducto" returnType="Producto" visibility="public">
+          <Argument type="int" name="tamanioListaTiendas"/>
+        </Method>
+        <Method name="mostrarProductos" returnType="void" visibility="public">
+          <Argument type="int" name="tamanioListaTiendas"/>
+        </Method>
+        <Method name="modificarProducto" returnType="void" visibility="public">
+          <Argument type="int" name="tamanioListaTiendas"/>
+        </Method>
+        <Method name="eliminarProducto" returnType="void" visibility="public"/>
+        <Method name="buscarProducto" returnType="Producto" visibility="public"/>
+        <Method name="getListaProductos" returnType="ArrayList&lt;Producto&gt;" visibility="public"/>
+        <Method name="eliminarTodosElementosArray" returnType="void" visibility="public">
+          <Argument type="Producto" name="p"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TiendaServicio" package="Servicio" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="private"/>
+        <Field name="listaTiendas" type="ArrayList&lt;Tienda&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="tamanioListaTiendas" returnType="int" visibility="public"/>
+        <Method name="inicializarTienda" returnType="void" visibility="public"/>
+        <Method name="crearTienda" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Producto&gt;" name="listaProductos"/>
+        </Method>
+        <Method name="mostrarTienda" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Producto&gt;" name="listaProductos"/>
+        </Method>
+        <Method name="modificarTienda" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Producto&gt;" name="listaProductos"/>
+        </Method>
+        <Method name="eliminarTienda" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Producto&gt;" name="listaProductos"/>
+        </Method>
+        <Method name="buscarTienda" returnType="Tienda" visibility="private"/>
+        <Method name="venderProducto" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Producto&gt;" name="listaProductos"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="listaProductos" source="Servicio.ProductoServicio" target="Entidades.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Producto&gt;"/>
+    <HasRelation name="listaTiendas" source="Servicio.TiendaServicio" target="Entidades.Tienda" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Tienda&gt;"/>
+    <UseRelation source="Servicio.TiendaServicio" target="Entidades.Tienda" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Servicio.TiendaServicio" target="Entidades.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Servicio.ProductoServicio" target="Entidades.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -61,16 +61,16 @@ public class CineServicios {
     public void imprimirM(){
                 
         System.out.println("");
-        System.out.println("");
         System.out.println("Butacas");
 
         for (int i=0; i<8; i++){
             System.out.println("");
             for (int j=0; j<6;j++){
-                System.out.print("[" + cine.getMatrizButaca(i, j).getButaca(0) + "" + cine.getMatrizButaca(i, j).getButaca(1) + "|" + cine.getMatrizButaca(i, j).getButaca(2) + "]");
+                System.out.print("[" + cine.getMatrizButaca(i, j).getButaca(0) + "" + cine.getMatrizButaca(i, j).getButaca(1) + "|" + cine.getMatrizButaca(i, j).getButaca(2) + "]  ");
             }
         }
         System.out.println("");
+        System.out.println("Capacidad libre de: " + cine.getCapacidadCont() + " asientos");
     }
     
     /*************************************************************************************/
@@ -79,7 +79,6 @@ public class CineServicios {
     
     public void imprimirEspaciosLibres(){
                 
-        System.out.println("");
         System.out.println("");
         System.out.println("Butacas Libres");
 
@@ -109,9 +108,10 @@ public class CineServicios {
             
             if(cine.getMatrizButaca(i, j).getButaca(2).equals("  ")){
                 cine.getMatrizButaca(i, j).setButacaOcup();
+                cine.setCapacidadCont();
                 cont++;
             }
-        }while(cont<20);
+        }while(cont<45);
 
         imprimirM();
     }
@@ -165,7 +165,7 @@ public class CineServicios {
             columnaInt = convertirColumna();
             if (cine.getMatrizButaca(fila, columnaInt).getButaca(2).endsWith("  ")) {
                 System.out.println("La persona se ubicará en la butaca: " + cine.getMatrizButaca(fila, columnaInt).getButaca(0)+ cine.getMatrizButaca(fila, columnaInt).getButaca(1));
-                cine.getMatrizButaca(fila, columnaInt).setButacaOcupP(2);
+                cine.getMatrizButaca(fila, columnaInt).setButacaOcupP(" P");
                 cine.setCapacidadCont();
                 respuesta = "N";
             } else {
@@ -178,7 +178,7 @@ public class CineServicios {
                     }
                 } while (!respuesta.equals("S") && !respuesta.equals("N"));
             }
-        } while (respuesta.equals("S"));
+        } while(respuesta.equals("S"));
     }
     
     /**************************************************************************************/
@@ -279,19 +279,20 @@ public class CineServicios {
         
         boolean personaValid;
         int contNoIng = 0;
+        int cont = 0;
         
-        if(cine.getCapacidadCont()>0){
-            for(int i=0; i<listadoPersonas.size(); i++){
-                personaValid = validandoCondiciones(listadoPersonas.get(i));
-                if(personaValid){
-                    elegirAsiento();
-                }else{
-                    contNoIng++;
-                }
+        do{
+            System.out.println(listadoPersonas.get(cont).getNombre());
+            personaValid = validandoCondiciones(listadoPersonas.get(cont));
+            if (personaValid) {
+                elegirAsiento();
             }
-        }
+            cont++;
+            System.out.println("*****************");
+        }while(cine.getCapacidadCont()>0);
         
-        System.out.println("El cine quedó con una capacidad libre de: " + cine.getCapacidadCont());
+        System.out.println("No hay capacidad para ingresar más personas");
+        imprimirM();
     }
     
 }

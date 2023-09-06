@@ -24,11 +24,36 @@ public class Varios {
 
         // conversion de entero a String
         
-        int contU = 0;
+        int entero = 0;
 
-        String contUS;
+        String palabra;
         
-        contUS = String.valueOf(contU);
+        palabra = String.valueOf(entero);
+        
+        /********************************************************************************************************/
+        /********************************************************************************************************/
+        /********************************************************************************************************/
+
+        // conversion de String a entero
+        
+        String palabra2 = "hola";
+        
+        int entero2;
+        
+        entero2 = Integer.parseInt(palabra2);
+        
+        
+        /********************************************************************************************************/
+        /********************************************************************************************************/
+        /********************************************************************************************************/
+        
+        // pedir un caracter x teclado
+        
+        System.out.print("Escriba el consumo del electrodoméstico: ");
+        char letra = leer.nextLine().charAt(0);
+        
+        
+        
         
     }
     
@@ -56,7 +81,9 @@ public class Varios {
         
         clientes.forEach(cliente -> System.out.println(cliente));
         clientes.forEach(System.out::println);
-    }        
+    }
+    
+    
  
 } 
         

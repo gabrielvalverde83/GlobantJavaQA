@@ -35,8 +35,6 @@ public class Cine {
 
     public void setMatrizButaca(int i, char j, Butaca butaca) {
         this.matrizButaca[i][j] = butaca;
-        capacidad--;
-        this.capacidadCont = capacidad;
     }
 
     public void setCapacidadCont() {

@@ -29,8 +29,8 @@ public class Butaca {
         this.butaca[2] = " X";
     }
     
-    public void setButacaOcupP(int i) {
-        this.butaca[i] = " X";
+    public void setButacaOcupP(String p) {
+        this.butaca[2] = p;
     }
     
     
