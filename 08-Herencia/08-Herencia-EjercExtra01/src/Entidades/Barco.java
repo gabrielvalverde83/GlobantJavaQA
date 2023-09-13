@@ -3,7 +3,7 @@ package Entidades;
 import java.util.Scanner;
 
 public class Barco {
-    Scanner leer = new Scanner(System.in);
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     private String matricula;
 
@@ -26,7 +26,7 @@ public class Barco {
     
     public void crearBarco(Barco b){
         System.out.println("Ingrese matricula: ");
-        b.matricula = leer.nextLine();
+        b.matricula = leer.next();
         System.out.println("Ingrese eslora: ");
         b.eslora = leer.nextInt();
         System.out.println("Ingrese año de fabricacion: ");

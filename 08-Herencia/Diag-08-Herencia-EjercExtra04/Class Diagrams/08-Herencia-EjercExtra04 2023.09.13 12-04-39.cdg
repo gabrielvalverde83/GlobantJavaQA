@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="08-Herencia-EjercExtra04">
+  <ClassDiagramComponents>
+    <Class name="Empleado" package="Entidades" visibility="public" isAbstract="true" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="anio" type="int" visibility="protected"/>
+        <Field name="nroDespacho" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="ID"/>
+          <Argument type="String" name="estadoCivil"/>
+          <Argument type="int" name="anio"/>
+          <Argument type="int" name="nroDespacho"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setNroDespacho" returnType="void" visibility="public">
+          <Argument type="int" name="nroDespacho"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Estudiante" package="Entidades" visibility="public" xPosition="255.0" yPosition="727.0">
+      <Fields>
+        <Field name="curso" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="ID"/>
+          <Argument type="String" name="estadoCivil"/>
+          <Argument type="String" name="curso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setCurso" returnType="void" visibility="public">
+          <Argument type="String" name="curso"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="Entidades" visibility="public" isAbstract="true" xPosition="173.0" yPosition="419.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="apellido" type="String" visibility="protected"/>
+        <Field name="ID" type="String" visibility="protected"/>
+        <Field name="estadoCivil" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="ID"/>
+          <Argument type="String" name="estadoCivil"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setEstadoCivil" returnType="void" visibility="public">
+          <Argument type="String" name="estadoCivil"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PersonaServicio" package="Entidades" visibility="public" xPosition="855.0" yPosition="56.0">
+      <Fields>
+        <Field name="seccion" type="SeccionesEnum" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="ID"/>
+          <Argument type="String" name="estadoCivil"/>
+          <Argument type="int" name="anio"/>
+          <Argument type="int" name="nroDespacho"/>
+          <Argument type="SeccionesEnum" name="seccion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setSeccion" returnType="void" visibility="public">
+          <Argument type="SeccionesEnum" name="seccion"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Profesor" package="Entidades" visibility="public" xPosition="675.0" yPosition="438.0">
+      <Fields>
+        <Field name="departamento" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="ID"/>
+          <Argument type="String" name="estadoCivil"/>
+          <Argument type="int" name="anio"/>
+          <Argument type="int" name="nroDespacho"/>
+          <Argument type="String" name="departamento"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setDepartamento" returnType="void" visibility="public">
+          <Argument type="String" name="departamento"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="pkg08.herencia.ejerc04" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="SeccionesEnum" package="enumClases" visibility="public" xPosition="1712.0" yPosition="276.0">
+      <Literals>
+        <Literal name="BIBLIOTECA"/>
+        <Literal name="DECANATO"/>
+        <Literal name="SECRETARIA"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Entidades.Estudiante" target="Entidades.Persona"/>
+    <IsRelation name="is" source="Entidades.Profesor" target="Entidades.Empleado"/>
+    <IsRelation name="is" source="Entidades.Empleado" target="Entidades.Persona"/>
+    <UseRelation source="Entidades.PersonaServicio" target="enumClases.SeccionesEnum" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Entidades.PersonaServicio" target="Entidades.Empleado"/>
+    <HasRelation name="seccion" source="Entidades.PersonaServicio" target="enumClases.SeccionesEnum" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

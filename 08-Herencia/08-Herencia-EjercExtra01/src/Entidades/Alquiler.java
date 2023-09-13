@@ -6,7 +6,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class Alquiler {
-    Scanner leer = new Scanner(System.in);
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     private String nombre;
 
@@ -34,7 +34,7 @@ public class Alquiler {
     
     public void crearAlquiler(Alquiler a){
         System.out.println("Ingrese nombre del cliente: ");
-        a.nombre = leer.nextLine();
+        a.nombre = leer.next();
         System.out.println("Ingrese documento del cliente: ");
         a.documento = leer.nextInt();
         leer.nextLine();

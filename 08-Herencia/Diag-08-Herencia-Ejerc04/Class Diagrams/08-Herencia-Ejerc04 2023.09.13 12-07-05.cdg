@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="08-Herencia-Ejerc04">
+  <ClassDiagramComponents>
+    <Class name="Main" package="ejer4herenciaformas" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Circulo" package="Entidades" visibility="public" xPosition="322.0" yPosition="20.0">
+      <Fields>
+        <Field name="radio" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="radio"/>
+          <Argument type="double" name="diametro"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRadio" returnType="double" visibility="public"/>
+        <Method name="setRadio" returnType="void" visibility="public">
+          <Argument type="double" name="radio"/>
+        </Method>
+        <Method name="getDiametro" returnType="double" visibility="public"/>
+        <Method name="setDiametro" returnType="void" visibility="public">
+          <Argument type="double" name="diametro"/>
+        </Method>
+        <Method name="area" returnType="void" visibility="public"/>
+        <Method name="perimetro" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Rectangulo" package="Entidades" visibility="public" xPosition="702.0" yPosition="402.0">
+      <Fields>
+        <Field name="base" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="base"/>
+          <Argument type="double" name="altura"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="area" returnType="void" visibility="public"/>
+        <Method name="perimetro" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="calculosFormas" package="Interfaces" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Methods>
+        <Method name="area" returnType="void" visibility="public"/>
+        <Method name="perimetro" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Entidades.Rectangulo" target="Interfaces.calculosFormas"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Entidades.Circulo" target="Interfaces.calculosFormas"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
