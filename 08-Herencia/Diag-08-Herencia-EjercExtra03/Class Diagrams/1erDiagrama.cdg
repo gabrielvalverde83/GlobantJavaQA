@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="1erDiagrama">
+  <ClassDiagramComponents>
+    <Class name="Hoteles" package="Entidades" visibility="public" isAbstract="true" xPosition="218.0" yPosition="254.0">
+      <Fields>
+        <Field name="cantHab" type="int" visibility="protected"/>
+        <Field name="numCamas" type="int" visibility="protected"/>
+        <Field name="cantPisos" type="int" visibility="protected"/>
+        <Field name="precioHab" type="int" visibility="protected"/>
+        <Field name="catGym" type="CategGym" visibility="protected"/>
+        <Field name="listadoHoteles4" type="ArrayList&lt;Hotel4&gt;" visibility="protected"/>
+        <Field name="listadoHoteles5" type="ArrayList&lt;Hotel5&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="AlojExtraHoteles" package="Entidades" visibility="public" isAbstract="true" xPosition="515.0" yPosition="268.0">
+      <Fields>
+        <Field name="priv" type="Opciones" visibility="protected"/>
+        <Field name="metCuad" type="int" visibility="protected"/>
+        <Field name="listadoResidencias" type="ArrayList&lt;Residencias&gt;" visibility="protected"/>
+        <Field name="listadoCampings" type="ArrayList&lt;Camping&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Alojamiento" package="Entidades" visibility="public" isAbstract="true" xPosition="415.0" yPosition="32.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="direccion" type="String" visibility="protected"/>
+        <Field name="localidad" type="String" visibility="protected"/>
+        <Field name="gerente" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Hotel5" package="Entidades" visibility="protected" isFinal="true" xPosition="321.0" yPosition="527.0">
+      <Fields>
+        <Field name="cantSalaConf" type="int" visibility="protected"/>
+        <Field name="cantSuites" type="int" visibility="protected"/>
+        <Field name="cantLimo" type="int" visibility="protected"/>
+        <Field name="resto" type="Restaurant" visibility="protected"/>
+        <Field name="precioSuite" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearHotel" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Hotel4" package="Entidades" visibility="protected" isFinal="true" xPosition="60.0" yPosition="527.0">
+      <Fields>
+        <Field name="resto" type="Restaurant" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Camping" package="Entidades" visibility="protected" isFinal="true" xPosition="866.0" yPosition="629.0">
+      <Fields>
+        <Field name="cantCarpas" type="int" visibility="protected"/>
+        <Field name="cantBanios" type="int" visibility="protected"/>
+        <Field name="resto" type="Opciones" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Residencias" package="Entidades" visibility="public" xPosition="549.0" yPosition="629.0">
+      <Fields>
+        <Field name="cantHab" type="int" visibility="protected"/>
+        <Field name="descGrem" type="Opciones" visibility="protected"/>
+        <Field name="campDep" type="Opciones" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="Restaurant" package="" visibility="public" xPosition="116.0" yPosition="732.0">
+      <Methods/>
+    </Interface>
+    <Enum name="CategGym" package="Enums" visibility="public" xPosition="24.0" yPosition="268.0">
+      <Literals>
+        <Literal name="A"/>
+        <Literal name="B"/>
+      </Literals>
+    </Enum>
+    <Enum name="Opciones" package="" visibility="public" xPosition="866.0" yPosition="315.0">
+      <Literals>
+        <Literal name="SI"/>
+        <Literal name="NO"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Entidades.Hotel5" target="Restaurant"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Entidades.Hotel4" target="Restaurant"/>
+    <IsRelation name="is" source="Entidades.Residencias" target="Entidades.AlojExtraHoteles"/>
+    <HasRelation name="descGrem" source="Entidades.Residencias" target="Opciones" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Entidades.AlojExtraHoteles" target="Entidades.Alojamiento"/>
+    <IsRelation name="is" source="Entidades.Camping" target="Entidades.AlojExtraHoteles"/>
+    <IsRelation name="is" source="Entidades.Hotel4" target="Entidades.Hoteles"/>
+    <IsRelation name="is" source="Entidades.Hoteles" target="Entidades.Alojamiento"/>
+    <HasRelation name="campDep" source="Entidades.Residencias" target="Opciones" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="priv" source="Entidades.AlojExtraHoteles" target="Opciones" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="resto" source="Entidades.Camping" target="Opciones" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Entidades.Hotel5" target="Entidades.Hoteles"/>
+    <HasRelation name="catGym" source="Entidades.Hoteles" target="Enums.CategGym" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
